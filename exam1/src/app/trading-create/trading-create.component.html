@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="tradingForm" (ngSubmit)="submit()">
+    <input type="hidden"/>
+    <div class="mb-3" style="margin-top: 10px">
+      <div class="mb-3">
+        <label class="form-label">Id Trade</label>
+        <input type="text" class="form-control" name="idTrade" formControlName="idTrade"/>
+        <p style="color: red" *ngIf="tradingForm.controls.idTrade.hasError('required') && tradingForm.controls.idTrade.dirty ">MGD ko duoc de trong</p>
+        <p style="color: red" *ngIf="tradingForm.controls.idTrade.hasError('pattern') ">MGD phai dung dinh dang</p>
+      </div>
+      <div>
+        <label class="form-label">Customer</label>
+        <select class="form-control" name="customer" formControlName="customer">
+          <option *ngFor="let item of customers" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" name="date" formControlName="date"/>
+        <p style="color: red" *ngIf="tradingForm.controls.date.hasError('required')">Ngay ko duoc de trong</p>
+        <p style="color: red" *ngIf="tradingForm.controls.date.hasError('Error')">Ko duoc chon ngay qua khu</p>
+      </div>
+      <div class="mb-3">
+        <input type="radio" id="nd"  value="nha dat" name="type" formControlName="type"/>
+        <label for="nd">Nha dat</label><br>
+        <input type="radio" id="css" name="type" value="bat dong san" formControlName="type" >
+        <label for="css">Bat dong san</label>
+        <p style="color: red" *ngIf="tradingForm.controls.type.hasError('required')">Type ko duoc de trong</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" name="price" formControlName="price" class="form-control"/>
+        <p style="color: red" *ngIf="tradingForm.controls.price.hasError('required')">Price ko duoc de trong</p>
+        <p style="color: red" *ngIf="tradingForm.controls.price.hasError('min')">Price phai lon hon 500000</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Area</label>
+        <input type="text" name="area" formControlName="area" class="form-control"/>
+        <p style="color: red" *ngIf="tradingForm.controls.area.hasError('required')">Area ko duoc de trong</p>
+        <p style="color: red" *ngIf="tradingForm.controls.area.hasError('min')">Area phai lon hon 20</p>
+      </div>
+      <input type="submit" class="btn btn-primary" [disabled]="!tradingForm.valid" value="Save"/>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,114 @@
+{
+  "tradings": [
+    {
+      "id": 2,
+      "idTrade": "MGD-0002",
+      "customer": {
+        "idCustomer": 2,
+        "name": "Linh",
+        "phone": "023231232",
+        "email": "kisibian108@gmail.com"
+      },
+      "date": "10/08/2022",
+      "type": "nha dat",
+      "price": 800,
+      "area": 400
+    },
+    {
+      "id": 3,
+      "idTrade": "MGD-0003",
+      "customer": {
+        "idCustomer": 3,
+        "name": "Ngoc",
+        "phone": "0913232123",
+        "email": "kisibian108@gmail.com"
+      },
+      "date": "10/08/2022",
+      "type": "nha dat",
+      "price": 500,
+      "area": 200
+    },
+    {
+      "id": 4,
+      "idTrade": "MGD-0004",
+      "customer": {
+        "idCustomer": 4,
+        "name": "Hien",
+        "phone": "0933242332",
+        "email": "kisibian108@gmail.com"
+      },
+      "date": "10/08/2022",
+      "type": "nha dat",
+      "price": 400,
+      "area": 100
+    },
+    {
+      "id": 6,
+      "customer": {
+        "idCustomer": 2,
+        "name": "Linh",
+        "phone": "023231232",
+        "email": "kisibian108@gmail.com"
+      },
+      "idTrade": "MGD-2347",
+      "date": "2022-08-19",
+      "type": "nha dat",
+      "price": 3333333,
+      "area": "44444"
+    },
+    {
+      "id": 10,
+      "customer": {
+        "idCustomer": 4,
+        "name": "Hien",
+        "phone": "0933242332",
+        "email": "kisibian108@gmail.com"
+      },
+      "idTrade": "MGD-4444",
+      "date": "2022-08-26",
+      "type": "bat dong san",
+      "price": 4444444,
+      "area": "44"
+    },
+    {
+      "id": 11,
+      "customer": {
+        "idCustomer": 3,
+        "name": "Ngoc",
+        "phone": "0913232123",
+        "email": "kisibian108@gmail.com"
+      },
+      "idTrade": "MGD-4447",
+      "date": "2022-08-26",
+      "type": "nha dat",
+      "price": 5555555,
+      "area": "55"
+    }
+  ],
+  "customers": [
+    {
+      "idCustomer": 1,
+      "name": "Lam",
+      "phone": "0973439239",
+      "email": "kisibian108@gmail.com"
+    },
+    {
+      "idCustomer": 2,
+      "name": "Linh",
+      "phone": "023231232",
+      "email": "kisibian108@gmail.com"
+    },
+    {
+      "idCustomer": 3,
+      "name": "Ngoc",
+      "phone": "0913232123",
+      "email": "kisibian108@gmail.com"
+    },
+    {
+      "idCustomer": 4,
+      "name": "Hien",
+      "phone": "0933242332",
+      "email": "kisibian108@gmail.com"
+    }
+  ]
+}

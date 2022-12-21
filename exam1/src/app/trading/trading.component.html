@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2 style="text-align: center; margin-top: 20px; margin-bottom: 20px">Trading management</h2>
+  </div>
+  <div>
+    <a role="button" class="btn btn-primary" [routerLink]="['/trading-create']">Add new trading</a>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="name" placeholder="Search">
+    <button type="submit" class="btn-primary" (click)="search()">Search</button>
+  </div>
+  <div class="container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>STT</th>
+        <th>Id Trading</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Service Type</th>
+        <th>Price</th>
+        <th>Area</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let trading of tradings| paginate: { itemsPerPage: 5, currentPage: p }, index as i">
+        <td>{{i + 1}}</td>
+        <td>{{trading.idTrade}}</td>
+        <td>{{trading.customer.name}}</td>
+        <td>{{trading.date}}</td>
+        <td>{{trading.type}}</td>
+        <td>{{trading.price}}</td>
+        <td>{{trading.area}}</td>
+        <td><a [routerLink]="['/trading-edit',trading.id]" role="button" class="btn btn-warning">Edit</a></td>
+        <td>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  (click)="showDelete(trading)">
+            Delete
+          </button>
+        </td>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <span>{{idTrade}}</span><br>
+                <span>{{type}}</span><br>
+                <span>{{date}}</span><br>
+                <span>{{price}}</span><br>
+                <span>{{area}}</span><br>
+                <span>{{name}}</span><br>
+                <span>{{phone}}</span><br>
+                <span>{{email}}</span><br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteTrading(idDelete)">
+                  Yes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </tr>
+      <tr ng-repeat="roll in sushi | orderBy:sortType:sortReverse | filter:searchName">
+      </tbody>
+
+      <div>
+      </div>
+    </table>
+    <div class="container-fluid mt-3">
+      <div class="pagination">
+        <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
